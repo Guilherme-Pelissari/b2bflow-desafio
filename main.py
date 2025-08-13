@@ -39,5 +39,11 @@ def enviar_mensagem(numero, nome):
         print(f"Erro ao enviar mensagem para {nome}: {e}")
 
 
-
+if __name__ == "__main__":
+    contatos = buscar_contatos()
+    if not contatos:
+        print("Nenhum contato encontrado.")
+    else:
+        for contato in contatos:
+            enviar_mensagem(contato["telefone"], contato["nome"])
 
