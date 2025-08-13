@@ -20,5 +20,24 @@ def buscar_contatos():
     except Exception as e:
         print(f"Erro ao buscar contatos: {e}")
         return []
+    
+def enviar_mensagem(numero, nome):
+    url = f"https://api.z-api.io/instances/{ZAPI_INSTANCE_ID}/token/{ZAPI_TOKEN}/send-text"
+    payload = {
+        "phone": numero,
+        "message": f"Olá {nome}, tudo bem com você?"
+    }
+    headers = {
+        "Content-Type": "application/json",
+        "Client-Token": ZAPI_CLIENT_TOKEN  
+    }
+    try:
+        r = requests.post(url, json=payload, headers=headers)
+        print(f"Mensagem enviada para {nome} ({numero}): {r.status_code}")
+        print("Resposta:", r.text)
+    except Exception as e:
+        print(f"Erro ao enviar mensagem para {nome}: {e}")
+
+
 
 
