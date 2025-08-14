@@ -2,6 +2,13 @@
 
 Este projeto é uma solução em Python que lê contatos salvos no Supabase e envia mensagens personalizadas via Z-API.
 
+## Clonando o Repositório
+Para começar, clone o repositório para sua máquina local com o seguinte comando:
+```bash
+git clone https://github.com/Guilherme-Pelissari/b2bflow-desafio.git
+cd b2bflow-desafio
+```
+
 ## Passos de Setup
 
 ### 1. Configuração no Supabase
